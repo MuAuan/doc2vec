@@ -14,14 +14,14 @@ parser.add_argument('faq', type=str)
 #parser.add_argument('model', type=str)
 parser.add_argument("--dictionary", "-d", type=str, help="mecab dictionary")
 args = parser.parse_args()
-
+"""
 def read_corpus(fname):
     #with smart_open.smart_open(fname, encoding="utf-8") as f:
     with smart_open.open(fname, encoding="utf-8") as f:    
         for i, line in enumerate(f):
             # For training data, add tags
             yield models.doc2vec.TaggedDocument(gensim.utils.simple_preprocess(line, min_len=1), tags=["SENT_"+str(i)])
-
+"""
 mecab = MeCab.Tagger("-Owakati" + ("" if not args.dictionary else " -d " + args.dictionary))
 
 #model = gensim.models.Doc2Vec.load(args.model)
