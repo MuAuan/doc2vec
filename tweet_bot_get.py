@@ -18,10 +18,10 @@ import locale   # import文はどこに書いてもOK(可読性などの為、�
 
 ### Constants                                                                                                                                                     
 oath_key_dict = {
-    "consumer_key": "nT1rwCL6uhceTqjYsILzOPBvJ",
-    "consumer_secret": "6iFeKONPR5FurTGpkAZxRxNH8aejYA49KUKbDHbMsidGTrHTcL",
-    "access_token": "941851419824439296-Qhgg7kDAt49A1MR1ZBmuSPtSSGHh4tX",
-    "access_token_secret": "3Vi2w4nOFIWXI5YNewa06i7gcrFHUMjqScyMvBkth3aTl"
+    "consumer_key": "************************",
+    "consumer_secret": "************************************************",
+    "access_token": "************************************************",
+    "access_token_secret": "************************************************"
 }
 
 ### Functions                                                                                                   
@@ -96,10 +96,10 @@ def tweet_get(t,params,tw_old,url1):
     return tw
     
 def main():
-    consumer_key= "nT1rwCL6uhceTqjYsILzOPBvJ"
-    consumer_secret= "6iFeKONPR5FurTGpkAZxRxNH8aejYA49KUKbDHbMsidGTrHTcL"
-    access_token= "941851419824439296-Qhgg7kDAt49A1MR1ZBmuSPtSSGHh4tX"
-    access_token_secret= "3Vi2w4nOFIWXI5YNewa06i7gcrFHUMjqScyMvBkth3aTl"
+    consumer_key= "************************"
+    consumer_secret= "************************************************"
+    access_token= "************************************************"
+    access_token_secret= "************************************************"
     auth=OAuth(access_token, access_token_secret, consumer_key, consumer_secret)
     t1 = Twitter(auth=auth)
 
