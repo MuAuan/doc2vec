@@ -19,10 +19,12 @@ mecab = MeCab.Tagger("-Owakati" + ("" if not args.dictionary else " -d " + args.
 
 questions = []
 sentences = []
+originals=[]
 j = 0
 for line in open(args.faq, "r"):  #, encoding="utf-8"): #utf-8
     cols = line.strip().split('\n')  #t
     questions.append(gensim.utils.simple_preprocess(mecab.parse(cols[0]).strip(), min_len=1)) #1
+    originals.append(cols[0]) 
     sentences.append(models.doc2vec.TaggedDocument(gensim.utils.simple_preprocess(mecab.parse(cols[0]).strip(), min_len=1), tags=["SENT_"+str(j)]))
     j += 1
 
@@ -54,9 +56,11 @@ while True:
     sims = cosine_similarity([vec], doc_vecs)
     index = np.argsort(sims[0])
 
-    #print(questions[index[-1]])
+    print(originals[index[-1]])
     print()
     for i in range(1,5):
+        print(originals[index[-i]])
+        print()
         line=questions[index[-i]]
         #print(line)
         line_=""
